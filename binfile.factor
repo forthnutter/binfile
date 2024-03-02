@@ -14,7 +14,7 @@ IN: binfile
 
 ! make structure to store the lines of data
 : <binfile> ( path -- binarray )
-    [ exists? ] keep swap
+    [ file-exists? ] keep swap
     [
         [ binfile-size ] keep swap
         [ binary ] dip [ read ] curry with-file-reader
